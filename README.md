@@ -16,15 +16,21 @@ This project aims to analyze the monthly expenses of an individual for the year 
 The data used for this analysis comes from a CSV file named 'Budget Analysis.csv', which contains monthly expenses for the categories mentioned above.
     
 #### The tools used were:
+- Excel: For data entry.
 - Pandas: For data manipulation and analysis.
 - Matplotlib: For creating visualizations.
 
  ### Data Cleaning and Preparation
 In the initial data preparation phase, the following tasks were performed:
 - The data was loaded from a CSV file using the pd.read_csv function.
+  
 ```
-myfile = pd.read_csv("C:\\Users\\Claud\\OneDrive\\feb1520241.csv")
+import pandas as pd
+import matplotlib.pyplot as plt
+
+myfile = pd.read_csv("C:\\Users\\Claud\\OneDrive\\Budget Analysis.csv")
 print(myfile)
+
 ```
 - The columns Months, Groceries, Utilities, Entertainment, and Self Care were extracted for analysis.
   
@@ -84,10 +90,7 @@ Please see the Bar Graph below:
 A Pie Chart was used to show the distribution of total expenses among different categories for the entire year. 
 
 ```
-total_expenses = [sum(y_data1), sum(y_data2), sum(y_data3), sum(y_data4)]
-labels = ["Groceries", "Utilities", "Entertainment", "Self Care"]
-colors = ["black", "red", "blue", "purple"]
-plt.pie(total_expenses, labels=labels, colors=colors, autopct='%1.1f%%')
+plt.pie(total_expenses,labels=categories,autopct="%.2f%%")
 
 plt.title("PIE CHART SHOWING THE DISTRIBUTION OF TOTAL EXPENSES FOR EACH CATEGORY FOR THE ENTIRE YEAR")
 plt.legend(loc="best")
